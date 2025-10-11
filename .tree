@@ -1,0 +1,89 @@
+─ marketing/
+├─ Landing.tsx
+├─ Features.tsx
+├─ Pricing.tsx
+
+; Choose a suitable folder for about contact
+├─ About.tsx
+├─ Contact.tsx
+
+    ─ blog/
+    ├─ BlogIndex.tsx
+    ├─ BlogPost.tsx
+
+    ─ update (or give it a better name)/
+    ├─ Changelog.tsx
+    ├─ Status.tsx
+
+    ─ policies/
+    ├─ Terms.tsx
+    └─ Privacy.tsx
+    └─ RefundPolicy.tsx
+    └─ CookiePolicy.tsx
+
+─ admin/            # Superadmin app
+├─ AdminLayout.tsx
+├─ Dashboard.tsx
+├─ LandlordsList.tsx
+├─ LandlordDetail.tsx
+├─ AgenciesList.tsx
+├─ AgencyDetail.tsx
+├─ Plans.tsx
+├─ Usage.tsx
+└─ Payouts.tsx
+─ owner/            # “Landlord” → call it Owner
+├─ OwnerLayout.tsx
+├─ Dashboard.tsx  # KPIs: MRR, Occupancy, Arrears, Tickets SLA
+├─ PropertiesList.tsx
+├─ PropertyDetail.tsx
+├─ UnitsList.tsx
+├─ UnitDetail.tsx
+├─ LeasesList.tsx
+├─ LeaseDetail.tsx
+├─ TenantsList.tsx
+├─ TenantDetail.tsx
+├─ InvoicesList.tsx
+├─ InvoiceDetail.tsx
+├─ PaymentsList.tsx
+├─ PaymentDetail.tsx
+├─ TicketsList.tsx
+├─ TicketDetail.tsx
+├─ VendorsList.tsx
+├─ VendorDetail.tsx
+├─ Reports.tsx
+└─ Settings.tsx   # profile, bank, payout settings
+─ manager/          # Agency (Property Manager) portal
+├─ ManagerLayout.tsx
+├─ Dashboard.tsx  # SLAs, Active WorkOrders, Team load
+├─ PropertiesList.tsx
+├─ PropertyDetail.tsx
+├─ UnitsList.tsx
+├─ UnitDetail.tsx
+├─ LeasesList.tsx
+├─ LeaseDetail.tsx
+├─ TenantsList.tsx
+├─ TenantDetail.tsx
+├─ WorkOrdersList.tsx
+├─ WorkOrderDetail.tsx
+├─ VendorsList.tsx
+├─ VendorDetail.tsx
+├─ Calendar.tsx   # inspections, move-in/out, scheduled visits
+├─ Messaging.tsx  # inbox (email/WhatsApp threads)
+├─ Reports.tsx
+└─ Settings.tsx   # org-wide (fees, notification rules)
+─ tenant/           # Tenant portal
+├─ TenantLayout.tsx
+├─ Dashboard.tsx  # next rent due, open tickets, docs
+├─ MyLease.tsx
+├─ PayRent.tsx
+├─ PaymentHistory.tsx
+├─ TicketsList.tsx
+├─ TicketDetail.tsx
+├─ Documents.tsx  # receipts, lease pdfs
+└─ Profile.tsx
+─ vendor/           # Optional vendor mini-portal
+├─ VendorLayout.tsx
+├─ Dashboard.tsx
+├─ WorkOrdersList.tsx
+├─ WorkOrderDetail.tsx
+└─ Invoices.tsx

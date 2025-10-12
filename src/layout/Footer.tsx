@@ -23,17 +23,15 @@ export default function Footer() {
                     <div>
                         <h5 className="font-semibold">Product</h5>
                         <ul className="mt-2 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+                            
                             <li>
-                                <a href="#features">Features</a>
-                            </li>
-                            <li>
-                                <a href="#how">How it works</a>
+                                <a href="/howitworks">How it works</a>
                             </li>
                             <li>
                                 <a href="/pricing">Pricing</a>
                             </li>
                             <li>
-                                <a href="#faq">FAQ</a>
+                                <a href="/faq">FAQ</a>
                             </li>
                         </ul>
                     </div>

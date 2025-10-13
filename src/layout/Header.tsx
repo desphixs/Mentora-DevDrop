@@ -38,8 +38,8 @@ const NAV_ITEMS = [
     { label: "Home", to: "/" },
     { label: "Pricing", to: "/pricing" },
     { label: "Contact", to: "/contact" },
-    { label: "About Us", to: "/about" },
-    { label: "Dashboard", to: "/dashboard" },
+    { label: "Mentee Dashboard", to: "/mentee" },
+    { label: "Mentor Dashboard", to: "/dashboard" },
 ];
 
 const CTA = { label: "Login", to: "/login" };

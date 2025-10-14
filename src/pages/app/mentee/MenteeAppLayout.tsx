@@ -29,12 +29,12 @@ export type NavKey =
     // settings
     | "Settings"
     | "SettingsProfile"
-    | "SettingsIntegrations"
-    | "SettingsNotifications"
-    | "SettingsSecurity"
+    // | "SettingsIntegrations"
+    // | "SettingsNotifications"
+    // | "SettingsSecurity"
     // support
-    | "Support"
-    | "SupportTickets";
+    // | "Support"
+    // | "SupportTickets";
 
 type Brand = { initials?: string; name?: string };
 
@@ -115,22 +115,22 @@ export const NAV_GROUPS: NavGroup[] = [
         children: [
             { key: "Settings", label: "General", to: "/mentee/settings", icon: SettingsIcon },
             { key: "SettingsProfile", label: "Profile", to: "/mentee/settings/profile", icon: User },
-            { key: "SettingsIntegrations", label: "Integrations", to: "/mentee/settings/integrations", icon: PlugZap },
-            { key: "SettingsNotifications", label: "Notifications", to: "/mentee/settings/notifications", icon: BellDot },
-            { key: "SettingsSecurity", label: "Security", to: "/mentee/settings/security", icon: KeyRound },
+            // { key: "SettingsIntegrations", label: "Integrations", to: "/mentee/settings/integrations", icon: PlugZap },
+            // { key: "SettingsNotifications", label: "Notifications", to: "/mentee/settings/notifications", icon: BellDot },
+            // { key: "SettingsSecurity", label: "Security", to: "/mentee/settings/security", icon: KeyRound },
         ],
     },
 
     // Support
-    {
-        label: "Support",
-        icon: HelpCircle,
-        to: "/mentee/support",
-        children: [
-            { key: "Support", label: "Help Center", to: "/mentee/support", icon: HelpCircle },
-            { key: "SupportTickets", label: "Tickets", to: "/mentee/support/tickets", icon: Ticket },
-        ],
-    },
+    // {
+    //     label: "Support",
+    //     icon: HelpCircle,
+    //     to: "/mentee/support",
+    //     children: [
+    //         { key: "Support", label: "Help Center", to: "/mentee/support", icon: HelpCircle },
+    //         { key: "SupportTickets", label: "Tickets", to: "/mentee/support/tickets", icon: Ticket },
+    //     ],
+    // },
     
 ];
 

@@ -179,15 +179,15 @@ const ME_Credits = React.lazy(
 const ME_Profile = React.lazy(
   () => import("@/pages/app/mentee/settings/Profile")
 );
-const ME_Integrations = React.lazy(
-  () => import("@/pages/app/mentee/settings/Integrations")
-);
-const ME_Notifications = React.lazy(
-  () => import("@/pages/app/mentee/settings/Notifications")
-);
-const ME_Security = React.lazy(
-  () => import("@/pages/app/mentee/settings/Security")
-);
+// const ME_Integrations = React.lazy(
+//   () => import("@/pages/app/mentee/settings/Integrations")
+// );
+// const ME_Notifications = React.lazy(
+//   () => import("@/pages/app/mentee/settings/Notifications")
+// );
+// const ME_Security = React.lazy(
+//   () => import("@/pages/app/mentee/settings/Security")
+// );
 
 // Mentee → Support
 const ME_HelpCenter = React.lazy(
@@ -375,9 +375,9 @@ export const routes: RouteObject[] = [
         path: "settings",
         children: [
           { path: "profile", element: suspense(<ME_Profile />) },
-          { path: "integrations", element: suspense(<ME_Integrations />) },
-          { path: "notifications", element: suspense(<ME_Notifications />) },
-          { path: "security", element: suspense(<ME_Security />) },
+            // { path: "integrations", element: suspense(<ME_Integrations />) },
+            // { path: "notifications", element: suspense(<ME_Notifications />) },
+            // { path: "security", element: suspense(<ME_Security />) },
         ],
       },
 

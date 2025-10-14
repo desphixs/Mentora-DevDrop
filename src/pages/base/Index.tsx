@@ -344,7 +344,7 @@ const MentoraLanding: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="mt-3 grid grid-cols-7 gap-1 text-[11px] text-zinc-500">
-                                            {["S", "M", "T", "W", "T", "F", "S"].map((d) => (
+                                            {["S", "M", "T", "W", "TH", "F", "SA"].map((d) => (
                                                 <div key={d} className="text-center py-1">
                                                     {d}
                                                 </div>

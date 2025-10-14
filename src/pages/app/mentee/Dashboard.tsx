@@ -88,52 +88,22 @@ const ME_Dashboard: React.FC = () => {
     <MenteeAppLayout>
       <div className="px-4 sm:px-6 lg:px-8 py-6">
         {/* Greeting + quick search */}
-        <div className={`grid lg:grid-cols-12 gap-4`}>
-          <div className={`${card} lg:col-span-8 p-5`}>
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full border border-[#E7E9FF] dark:border-[#2B2F55] bg-white/70 dark:bg-white/[0.05]">
-                  <Sparkles size={14}/> Welcome back
-                </div>
-                <h1 className="mt-2 text-2xl font-bold">Find the right mentor faster</h1>
-                <p className="text-sm text-[#5E66A6] dark:text-[#A7B0FF]/85">Search by skill, availability, or price—then book in one click.</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <select className={`${card} h-10 px-3 text-sm`} value={range} onChange={(e)=>setRange(e.target.value as any)}>
-                  <option value="7d">Last 7 days</option>
-                  <option value="30d">Last 30 days</option>
-                  <option value="90d">Last 90 days</option>
-                </select>
-              </div>
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <div className={`flex items-center gap-2 ${card} h-11 px-3.5 flex-1 min-w-[240px]`}>
-                <Search size={16} className="text-[#5F679A] dark:text-[#A7B0FF]" />
-                <input
-                  className="bg-transparent outline-none text-sm w-full"
-                  placeholder="Search mentors, tags, titles…"
-                  value={q}
-                  onChange={(e)=>setQ(e.target.value)}
-                />
-              </div>
-              <button className={`${btn} ${btnGhost}`}><Filter size={16}/> Filters</button>
-              <Link to="/mentee/discover" className={`${btn} ${btnSolid}`}>Discover mentors <ArrowRight size={16}/></Link>
-            </div>
-          </div>
+        <div>
+        
 
           {/* Stats */}
-          <div className="lg:col-span-4 grid sm:grid-cols-3 lg:grid-cols-1 gap-4">
-            <div className={`${card} p-4`}>
+          <div className="flex md:flex-row flex-col w-full gap-4">
+            <div className={`${card} p-4 w-full`}>
               <div className="text-sm font-semibold flex items-center gap-2"><BadgeDollarSign size={16}/> Credits</div>
               <div className="mt-2 text-3xl font-extrabold">$120</div>
               <div className="mt-2 text-xs text-[#6B72B3] dark:text-[#A7B0FF]/80">You can book ~90 minutes</div>
             </div>
-            <div className={`${card} p-4`}>
+            <div className={`${card} p-4 w-full`}>
               <div className="text-sm font-semibold flex items-center gap-2"><CalendarCheck2 size={16}/> Upcoming</div>
               <div className="mt-2 text-3xl font-extrabold">{sessions.filter(s=>s.status==="upcoming").length}</div>
               <div className="mt-2 text-xs text-[#6B72B3] dark:text-[#A7B0FF]/80">Next: {fmtShort(sessions[0].date)}</div>
             </div>
-            <div className={`${card} p-4`}>
+            <div className={`${card} p-4 w-full`}>
               <div className="text-sm font-semibold flex items-center gap-2"><TrendingUp size={16}/> Streak</div>
               <div className="mt-2 text-3xl font-extrabold">5</div>
               <div className="mt-2 text-xs text-[#6B72B3] dark:text-[#A7B0FF]/80">weeks booked</div>

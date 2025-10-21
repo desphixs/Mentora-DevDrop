@@ -131,7 +131,6 @@ export const NAV_GROUPS: NavGroup[] = [
             { key: "SupportTickets", label: "Tickets", to: "/mentee/support/tickets", icon: Ticket },
         ],
     },
-    
 ];
 
 /* ---------------------------------

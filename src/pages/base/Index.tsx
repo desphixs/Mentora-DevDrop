@@ -106,7 +106,7 @@ const MentoraLanding: React.FC = () => {
                                 Launch-ready SaaS Kit
                             </span>
 
-                            <h1 className="mt-6 text-[2.5rem] sm:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#0F1228] dark:text-transparent bg-clip-text bg-gradient-to-br from-[#5B72F6] via-[#6366F1] to-[#8B5CF6]">
+                            <h1 className="mt-6 text-[2.5rem] sm:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#0F1228] dark:text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#cfd6ff] to-[#cfd6ff]">
                                 Build a mentorship marketplace
                                 <span className="block">that converts.</span>
                             </h1>
@@ -457,7 +457,7 @@ const MentoraLanding: React.FC = () => {
             <section className="py-14 sm:py-20 relative">
                 <BgBlobs variant="section" />
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-3 gap-6">
+                    <div className="grid lg:grid-cols-2 gap-6">
                         {/* Left: narrative card */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelLight} p-6 sm:p-8 ${SH.md}`}>
                             <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full border ${S.border}">
@@ -475,35 +475,6 @@ const MentoraLanding: React.FC = () => {
                             <Link to="/features" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">
                                 Explore features <ArrowRight size={16} />
                             </Link>
-                        </div>
-
-                        {/* Middle: stat band */}
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
-                                <div className="text-sm font-semibold">Activation</div>
-                                <div className="mt-3 flex items-end gap-3">
-                                    <div className="text-4xl font-extrabold">92%</div>
-                                    <div className={`${T.muted}`}>first week onboard</div>
-                                </div>
-                                <div className="mt-5 h-2 rounded-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
-                                    <div className={`h-full w-[92%] bg-gradient-to-r ${G.brand}`} />
-                                </div>
-                            </div>
-                            <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
-                                <div className="text-sm font-semibold">Avg. conversion</div>
-                                <div className="mt-3 flex items-end gap-3">
-                                    <div className="text-4xl font-extrabold">34%</div>
-                                    <div className={`${T.muted}`}>search → booking</div>
-                                </div>
-                                <div className="mt-5 grid grid-cols-3 gap-2 text-xs">
-                                    {["SEO", "Referrals", "Direct"].map((t, i) => (
-                                        <div key={t} className={`rounded-xl border ${S.border} p-3`}>
-                                            <div className="font-semibold">{t}</div>
-                                            <div className={`${T.muted}`}>{[18, 9, 7][i]}%</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
 
                         {/* Right: review showcase */}
@@ -531,6 +502,7 @@ const MentoraLanding: React.FC = () => {
             </section>
 
             {/* ===== FEATURE SHOWCASE (staggered) ===== */}
+            {/* ===== FEATURE SHOWCASE (staggered) ===== */}
             <section className="py-14 sm:py-20 relative border-t border-b border-zinc-200/70 dark:border-zinc-800">
                 <BgBlobs variant="section" />
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -540,20 +512,76 @@ const MentoraLanding: React.FC = () => {
                     </div>
 
                     <div className="mt-10 grid lg:grid-cols-3 gap-6">
-                        {/* tall feature */}
+                        {/* ── Tall: Booking ───────────────────────────────── */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelLight} p-6 lg:row-span-2`}>
                             <div className="flex items-center gap-2 text-sm font-semibold">
                                 <CalendarCheck2 size={18} /> 1:1 & Group Booking
                             </div>
                             <p className={`mt-2 ${T.subtle}`}>Timezone aware. Calendar sync. Edge cases handled.</p>
-                            <div className="mt-6 rounded-2xl h-52 border ${S.border} bg-gradient-to-br from-white/70 to-white/30 dark:from-zinc-900/60 dark:to-zinc-900/30" />
+
+                            {/* mini calendar + timezone hint */}
+                            <div className={`mt-6 rounded-2xl border ${S.border} p-4`}>
+                                {/* header */}
+                                <div className="flex items-center justify-between">
+                                    <div className="text-sm font-medium">Mar 10 – Mar 16</div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="rounded-full border px-2 py-0.5 text-xs">UTC+01:00</span>
+                                        <span className="rounded-full border px-2 py-0.5 text-xs">Auto-detect</span>
+                                    </div>
+                                </div>
+
+                                {/* weekday row */}
+                                <div className="mt-3 grid grid-cols-7 gap-2 text-[11px] text-center">
+                                    {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
+                                        <div key={d} className={`rounded-lg border ${S.border} py-1`}>
+                                            {d}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* time slots */}
+                                <div className="mt-2 grid grid-cols-7 gap-2">
+                                    {[...Array(7)].map((_, col) => (
+                                        <div key={col} className="space-y-2">
+                                            {/* sample availability blocks */}
+                                            <div className="h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30" />
+                                            {col % 2 === 0 ? <div className="h-8 rounded-lg bg-blue-500/10 border border-blue-500/30" /> : null}
+                                            {col === 2 ? <div className="h-12 rounded-lg bg-amber-500/10 border border-amber-500/30" /> : null}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* footer: avatars + ICS/GCal */}
+                                <div className="mt-4 flex items-center justify-between">
+                                    <div className="flex -space-x-2">
+                                        <div className="h-6 w-6 rounded-full border border-white dark:border-zinc-900 bg-gradient-to-br from-pink-400 to-rose-400" />
+                                        <div className="h-6 w-6 rounded-full border border-white dark:border-zinc-900 bg-gradient-to-br from-indigo-400 to-cyan-400" />
+                                        <div className="h-6 w-6 rounded-full border border-white dark:border-zinc-900 bg-gradient-to-br from-amber-400 to-orange-500" />
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button className="rounded-lg border px-2 py-1 text-xs">Add to Google</button>
+                                        <button className="rounded-lg border px-2 py-1 text-xs">Export .ics</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* tiny edge-case strip */}
+                            <div className="mt-4 grid grid-cols-3 gap-2 text-[11px]">
+                                {["DST handled", "No-show buffer", "Double-book guard"].map((t) => (
+                                    <div key={t} className="rounded-lg border px-2 py-1 text-center">
+                                        {t}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        {/* two mediums */}
+
+                        {/* ── Medium: Payments ────────────────────────────── */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
                             <div className="flex items-center gap-2 text-sm font-semibold">
                                 <CreditCard size={18} /> Global Payments
                             </div>
                             <p className={`mt-2 ${T.subtle}`}>Stripe, Paystack, Flutterwave, Razorpay, UPI.</p>
+
                             <div className="mt-4 grid grid-cols-4 gap-2 text-xs">
                                 {["Visa", "Mastercard", "UPI", "Bank"].map((p) => (
                                     <div key={p} className={`rounded-xl border ${S.border} p-3 text-center`}>
@@ -561,29 +589,120 @@ const MentoraLanding: React.FC = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            {/* payout summary */}
+                            <div className={`mt-4 rounded-2xl border ${S.border} p-4`}>
+                                <div className="flex items-center justify-between text-sm">
+                                    <span>Next payout</span>
+                                    <span className="font-medium">$1,842.00</span>
+                                </div>
+                                <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-zinc-200/60 dark:bg-zinc-800">
+                                    <div className="h-full w-2/3 bg-gradient-to-r from-emerald-400/80 to-emerald-500/80" />
+                                </div>
+                                <div className={`mt-2 text-[11px] ${T.subtle}`}>Processing settlements across gateways</div>
+                            </div>
                         </div>
+
+                        {/* ── Medium: Credits & Packages ──────────────────── */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
                             <div className="flex items-center gap-2 text-sm font-semibold">
                                 <Wallet size={18} /> Credits & Packages
                             </div>
                             <p className={`mt-2 ${T.subtle}`}>One-offs, bundles, subscriptions—pick your model.</p>
-                            <div className="mt-4 h-28 rounded-2xl border ${S.border} bg-gradient-to-r ${G.brandSoft}" />
+
+                            {/* mini pack shelf */}
+                            <div className="mt-4 grid grid-cols-3 gap-3">
+                                {[
+                                    { name: "Starter", note: "10 credits", price: "$9" },
+                                    { name: "Pro", note: "50 credits", price: "$35" },
+                                    { name: "Studio", note: "Monthly sub", price: "$29/mo" },
+                                ].map((p) => (
+                                    <div key={p.name} className={`rounded-2xl border ${S.border} p-3`}>
+                                        <div className="text-sm font-semibold">{p.name}</div>
+                                        <div className={`text-xs ${T.subtle}`}>{p.note}</div>
+                                        <div className="mt-2 text-sm font-medium">{p.price}</div>
+                                        <button className="mt-2 w-full rounded-lg border px-2 py-1 text-xs">Select</button>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* usage bar */}
+                            <div className={`mt-4 h-24 rounded-2xl border ${S.border} bg-gradient-to-r ${G.brandSoft}`} aria-hidden />
                         </div>
-                        {/* two mediums bottom */}
+
+                        {/* ── Bottom: Secure Messages ─────────────────────── */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
                             <div className="flex items-center gap-2 text-sm font-semibold">
                                 <MessageSquare size={18} /> Secure Messages
                             </div>
                             <p className={`mt-2 ${T.subtle}`}>Attachments, follow-ups, and reminders built-in.</p>
-                            <div className="mt-4 h-28 rounded-2xl border ${S.border} bg-gradient-to-br from-white/70 to-white/30 dark:from-zinc-900/60 dark:to-zinc-900/30" />
+
+                            {/* chat preview */}
+                            <div className={`mt-4 rounded-2xl border ${S.border} p-3`}>
+                                <div className="space-y-2">
+                                    <div className="flex items-start gap-2">
+                                        <div className="h-6 w-6 shrink-0 rounded-full bg-gradient-to-br from-indigo-400 to-cyan-400" />
+                                        <div className="max-w-[75%] rounded-2xl border px-3 py-2 text-xs">Hey! Sharing my availability for next week. Also attached the brief.</div>
+                                    </div>
+                                    <div className="flex items-start gap-2 justify-end">
+                                        <div className="max-w-[75%] rounded-2xl border px-3 py-2 text-xs bg-emerald-500/10 border-emerald-500/30">Got it—Tuesday 2pm works. I’ll send the Zoom link.</div>
+                                        <div className="h-6 w-6 shrink-0 rounded-full bg-gradient-to-br from-amber-400 to-orange-500" />
+                                    </div>
+                                </div>
+
+                                {/* attachments row */}
+                                <div className="mt-3 flex items-center gap-2">
+                                    <div className="rounded-lg border px-2 py-1 text-[11px]">brief.pdf</div>
+                                    <div className="rounded-lg border px-2 py-1 text-[11px]">portfolio.zip</div>
+                                    <div className="ml-auto text-[11px] rounded-lg border px-2 py-1">Remind in 24h</div>
+                                </div>
+                            </div>
                         </div>
+
+                        {/* ── Bottom: Disputes & KYC ──────────────────────── */}
                         <div className={`rounded-3xl border ${S.border} ${S.panelSolid} p-6`}>
                             <div className="flex items-center gap-2 text-sm font-semibold">
                                 <ShieldCheck size={18} /> Disputes & KYC
                             </div>
                             <p className={`mt-2 ${T.subtle}`}>Admin controls to keep the marketplace safe.</p>
-                            <div className="mt-4 h-28 rounded-2xl border ${S.border} bg-gradient-to-br from-white/70 to-white/30 dark:from-zinc-900/60 dark:to-zinc-900/30" />
+
+                            {/* status + checklist */}
+                            <div className="mt-4 grid grid-cols-2 gap-3">
+                                <div className={`rounded-2xl border ${S.border} p-3`}>
+                                    <div className="text-xs font-medium">KYC Status</div>
+                                    <div className="mt-2 flex items-center gap-2">
+                                        <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px]">
+                                            <span className="h-2 w-2 rounded-full bg-emerald-500" /> Verified
+                                        </span>
+                                        <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px]">Risk: Low</span>
+                                    </div>
+                                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-zinc-200/60 dark:bg-zinc-800">
+                                        <div className="h-full w-4/5 bg-gradient-to-r from-emerald-400/80 to-emerald-500/80" />
+                                    </div>
+                                    <div className={`mt-2 text-[11px] ${T.subtle}`}>Proof of ID • Proof of Address • Liveness</div>
+                                </div>
+
+                                <div className={`rounded-2xl border ${S.border} p-3`}>
+                                    <div className="text-xs font-medium">Dispute Center</div>
+                                    <ul className="mt-2 space-y-2 text-[11px]">
+                                        <li className="flex items-center justify-between rounded-lg border px-2 py-1">
+                                            Chargeback • <span className="rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-300 px-2 py-0.5">Investigating</span>
+                                        </li>
+                                        <li className="flex items-center justify-between rounded-lg border px-2 py-1">
+                                            Content violation • <span className="rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 px-2 py-0.5">Resolved</span>
+                                        </li>
+                                        <li className="flex items-center justify-between rounded-lg border px-2 py-1">
+                                            Refund request • <span className="rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-300 px-2 py-0.5">Pending</span>
+                                        </li>
+                                    </ul>
+                                    <div className="mt-2 flex gap-2">
+                                        <button className="w-full rounded-lg border px-2 py-1 text-[11px]">Open case</button>
+                                        <button className="w-full rounded-lg border px-2 py-1 text-[11px]">Download log</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {/* ─────────────────────────────────────────────────── */}
                     </div>
                 </div>
             </section>

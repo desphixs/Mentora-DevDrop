@@ -277,14 +277,13 @@ const ME_SelectSlot: React.FC = () => {
                       {slots.slice(0, 9).map(s => {
                         const sel = selected?.id === s.id;
                         return (
-                          <button
-                            key={s.id}
-                            onClick={() => onChoose(s)}
-                            className={`rounded-lg border px-2.5 py-2 text-left text-xs ${sel ? "bg-[#EEF2FF] border-[#AAB4FF]" : "bg-white/70 dark:bg-white/[0.05]"} border-[#E7E9FF] dark:border-[#2B2F55] ${ringIndigo}`}
-                          >
-                            <div className="font-semibold flex items-center gap-1"><Clock size={12}/>{fmtTime(s.start)}</div>
-                            <div className="text-[11px] opacity-70">{fmtDay(s.start)}</div>
-                          </button>
+                            <button key={s.id} onClick={() => onChoose(s)} className={`rounded-lg border px-2.5 py-2 text-left text-xs ${sel ? "bg-[#EEF2FF] dark:bg-[#2b2e41] border-[#AAB4FF]" : "bg-white/70 dark:bg-white/[0.05]"} border-[#E7E9FF] dark:border-[#2B2F55] ${ringIndigo}`}>
+                                <div className="font-semibold flex items-center gap-1">
+                                    <Clock size={12} />
+                                    {fmtTime(s.start)}
+                                </div>
+                                <div className="text-[11px] opacity-70">{fmtDay(s.start)}</div>
+                            </button>
                         );
                       })}
                     </div>
